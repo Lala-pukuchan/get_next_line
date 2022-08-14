@@ -6,7 +6,7 @@
 /*   By: rukobaya <rukobaya@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 07:53:07 by rukobaya          #+#    #+#             */
-/*   Updated: 2022/08/14 09:50:11 by rukobaya         ###   ########.fr       */
+/*   Updated: 2022/08/14 13:13:24 by rukobaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ char	*ft_strndup(const char *s, int size)
 	return (p);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(const char	*s1, const char	*s2)
 {
 	char	*p;
 
@@ -63,7 +63,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return (p);
 }
 
-size_t ft_strchr_idx(const char *s, int c)
+size_t	ft_strchr_idx(const char *s, int c)
 {
 	size_t	i;
 	size_t	n;

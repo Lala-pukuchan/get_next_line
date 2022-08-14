@@ -6,13 +6,13 @@
 /*   By: rukobaya <rukobaya@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 07:24:54 by rukobaya          #+#    #+#             */
-/*   Updated: 2022/08/14 09:44:22 by rukobaya         ###   ########.fr       */
+/*   Updated: 2022/08/14 13:09:03 by rukobaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char*	ft_append_buf_to_save(char *buf, char	*save, int	size)
+char	*ft_append_buf_to_save(char	*buf, char	*save, int	size)
 {
 	char	*tmp;
 
@@ -30,7 +30,7 @@ char*	ft_append_buf_to_save(char *buf, char	*save, int	size)
 	return (save);
 }
 
-char*	ft_read_file(int	fd, char	*save)
+char	*ft_read_file(int	fd, char	*save)
 {
 	int		size;
 	char	buf[BUFFER_SIZE + 1];
@@ -50,13 +50,13 @@ char*	ft_read_file(int	fd, char	*save)
 		save = ft_append_buf_to_save(buf, save, size);
 		if (!save)
 			return (NULL);
-		if (ft_strchr_idx(save, '\n') != (unsigned long)-1)
+		if (ft_strchr_idx(save, '\n') != (unsigned long) - 1)
 			break ;
 	}
 	return (save);
 }
 
-char *ft_create_line(char	*save)
+char	*ft_create_line(char	*save)
 {
 	int		n_idx;
 	char	*line;
@@ -69,7 +69,7 @@ char *ft_create_line(char	*save)
 	return (line);
 }
 
-char *ft_save_remain(char	*save)
+char	*ft_save_remain(char	*save)
 {
 	int		n_idx;
 	char	*tmp;
@@ -80,8 +80,6 @@ char *ft_save_remain(char	*save)
 		tmp = NULL;
 	else if (n_idx != -1)
 		tmp = ft_strndup(&save[n_idx + 1], ft_strlen(save) - (n_idx + 1));
-	else
-		;
 	free(save);
 	return (tmp);
 }
@@ -89,7 +87,7 @@ char *ft_save_remain(char	*save)
 char	*get_next_line(int fd)
 {
 	static char	*save;
-	char	*line;
+	char		*line;
 
 	if (fd < 0 || fd > FD_MAX || BUFFER_SIZE < 1)
 	{
