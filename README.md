@@ -1,1 +1,21 @@
 # get_next_line
+- prepare static variable SAVE to store remaining characters, which are read from file but not printed yet
+- validate args
+- read file
+    - retrieve file contents into BUF and modify SAVE
+        - if SAVE is null, then create new strings with BUF
+        - is not, concatinate (SAVE + BUF)
+    - if read() reached to EOF or '\n', break from read()
+- create LINE for printing from SAVE
+    - if SAVE doesn't have '\n' or has '\n' at the end
+        - create new strings with SAVE
+    - else
+        - create new strings with substring of SAVE till '\n'
+- save the rest into SAVE
+    - if SAVE has '\n' at the end
+        - input NULL into SAVE
+    - else if SAVE doesn't have '\n'
+        - input substring of SAVE after '\n'
+    - else
+        - input NULL into SAVE
+- return LINE to print
