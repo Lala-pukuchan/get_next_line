@@ -6,7 +6,7 @@
 /*   By: rukobaya <rukobaya@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 07:24:54 by rukobaya          #+#    #+#             */
-/*   Updated: 2022/08/14 13:09:03 by rukobaya         ###   ########.fr       */
+/*   Updated: 2022/08/14 13:16:49 by rukobaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,5 +101,5 @@ char	*get_next_line(int fd)
 		return (NULL);
 	line = ft_create_line(save);
 	save = ft_save_remain(save);
-	return(line);
+	return (line);
 }
